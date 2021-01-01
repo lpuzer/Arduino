@@ -1,17 +1,18 @@
 
-// Projeto arduino pisca led em hora específica.
+// Arduino project to switch on/off a aquarium lamp. 
+//The system is under control of relay connected to the arduino pine 8.
 
 
 int pino8 = 8;
-int delayNight = 32400000;
-int delayDay = 54000000;
+int delayOff = 32400000;
+int delayOn = 54000000;
 
 void loopLamp() {
       for (;;){
       digitalWrite(pino8, LOW);
-      delay (delayDay);
+      delay (delayOn);
       digitalWrite(pino8, HIGH);
-      delay (delayNight);
+      delay (delayOff);
       } 
 }
 
@@ -22,17 +23,17 @@ void setup () {
 
 void loop () {
 
-    //After restarting the system, use the code below to turn the aquarium light back 
+    //After restarting the system, use the code below to turn the aquarium lamp back 
     //on and align it with the loopLamp (7am - 10pm). You need to adjust the delay 
-    //according to the time you are turning on the aquarium light.
-    //for example, if the time is 3pm, you need to replace the value of 54000000 with 28800000 
-    //(number of ms up to 10pm).
+    //according to the time you are turning on the aquarium lamp.
+    //For example, if the time is 3pm, you need to replace the value of 54000000 with 28800000 
+    //(ms up to 10pm).
     
     
       digitalWrite(pino8, LOW);
-      delay (28799700);
+      delay (54000000);
       digitalWrite(pino8, HIGH);
-      delay (delayNight);
+      delay (delayOff);
     
     
 
