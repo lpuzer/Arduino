@@ -1,6 +1,6 @@
 
 // Arduino project to switch on/off a aquarium lamp. 
-//The system is under control of relay connected to the arduino pine 8.
+//The system is under control of a relay connected to the arduino pine 8.
 
 
 int pino8 = 8;
